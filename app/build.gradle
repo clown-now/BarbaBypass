@@ -18,17 +18,15 @@ android {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.debug
         }
         debug {
             minifyEnabled false
-            signingConfig signingConfigs.debug
         }
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 
     applicationVariants.configureEach { variant ->
@@ -39,7 +37,6 @@ android {
 }
 
 dependencies {
-    // Xposed API — 编译时依赖，不打入 APK
-    compileOnly 'de.robv.android.xposed:api:82'
-    compileOnly 'de.robv.android.xposed:constants:82'
+    // Xposed API from jitpack
+    compileOnly 'com.github.LSPosed:Xposed:Manager-v2024.06.23-224519'
 }
