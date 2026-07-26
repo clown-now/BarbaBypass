@@ -10,3 +10,4 @@ cache/
 *.tmp
 .DS_Store
 Thumbs.db
+libs/*.jar

@@ -1,8 +1,0 @@
-plugins {
-    id 'java-library'
-}
-
-jar {
-    from 'src/main/classes'
-    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-}
