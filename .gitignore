@@ -1,55 +1,12 @@
-# Gradle
 .gradle/
 build/
-
-# Android Studio
-dlls/
+app/build/
 .idea/
-cache/
-jps/
-test-result
-production/
-*.iml
-*.ipr
-*.iws
-out/
-
-# Gradle plugins cache
-.gradle/gradlePluginArtifacts/
-
-# local.properties
 local.properties
-
-# Built application files
+cache/
 *.apk
-*.ap_
-
-# Local configuration file (sdk path, etc)
-proguard-project.txt
-project.properties
-project.config
-
-# Libraries
-*.jar
 *.aar
-
-# Internal data
-downloads/
-
-# Maven
-target/
-pom.xml
-
-# gradle wrapper
-download-process-cache/
-
-# Temporary stuff
+*.log
 *.tmp
-*.bak
-
-# OS
 .DS_Store
 Thumbs.db
-
-# Log files
-*.log

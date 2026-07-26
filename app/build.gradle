@@ -37,6 +37,5 @@ android {
 }
 
 dependencies {
-    // Xposed API from bundled jar
-    compileOnly fileTree(dir: '.', include: ['xposed-api.jar'])
+    compileOnly project(':xposed-api')
 }
