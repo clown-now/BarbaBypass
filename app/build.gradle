@@ -37,6 +37,6 @@ android {
 }
 
 dependencies {
-    // Xposed API from jitpack
-    compileOnly 'com.github.LSPosed:Xposed:Manager-v2024.06.23-224519'
+    // Xposed API from jitpack (rovo89/XposedBridge)
+    compileOnly 'com.github.rovo89:XposedBridge:v4.3-r9.1'
 }
