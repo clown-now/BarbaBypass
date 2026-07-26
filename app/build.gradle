@@ -37,6 +37,6 @@ android {
 }
 
 dependencies {
-    // Xposed API from bundled jar (not bundled in final APK — use provided scope)
-    compileOnly files('libs/xposed-api.jar')
+    // Xposed API from bundled jar
+    compileOnly fileTree(dir: 'libs', include: ['*.jar'])
 }
