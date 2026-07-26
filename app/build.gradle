@@ -37,6 +37,6 @@ android {
 }
 
 dependencies {
-    // Use jitpack with master branch (has Eclipse-style build)
-    compileOnly 'com.github.rovo89:XposedBridge:master-SNAPSHOT'
+    // Use local jar for Xposed API (precompiled from rovo89/XposedBridge v89)
+    compileOnly files('libs/xposed-api.jar')
 }

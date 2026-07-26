@@ -32,7 +32,6 @@ project.config
 # Libraries
 *.jar
 *.aar
-libs/
 
 # Internal data
 downloads/
