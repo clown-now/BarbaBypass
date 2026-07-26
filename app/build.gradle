@@ -37,6 +37,6 @@ android {
 }
 
 dependencies {
-    // Use local jar for Xposed API (precompiled from rovo89/XposedBridge v89)
+    // Xposed API from bundled jar (not bundled in final APK — use provided scope)
     compileOnly files('libs/xposed-api.jar')
 }
