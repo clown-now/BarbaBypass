@@ -86,11 +86,14 @@ public class MainHook implements IXposedHookLoadPackage {
         if (adClazz == null) return;
 
         try {
-            XposedHelpers.findAndHookConstructor(adClazz,
+            // 使用 Xposed API 82 标准签名：findAndHookConstructor(Class, Class[], hook)
+            // 无参构造，传入空参数类型数组
+            XposedHelpers.findAndHookConstructor(adClazz, new Class<?>[0],
                     new XC_MethodHook() {
                         @Override
                         protected void beforeHookedMethod(MethodHookParam param) {
-                            Object listener = findListener(param);
+                            // AdListener 作为构造函数参数，位于 param.args[0]
+                            Object listener = param.args[0];
                             if (listener != null) {
                                 hookAdListener(listener.getClass().getName(), lpparam);
                             }
