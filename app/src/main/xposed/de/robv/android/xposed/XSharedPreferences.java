@@ -1,5 +1,7 @@
 package de.robv.android.xposed;
 
+import android.content.SharedPreferences;
+
 import java.util.*;
 
 public class XSharedPreferences implements SharedPreferences {
@@ -37,6 +39,7 @@ public class XSharedPreferences implements SharedPreferences {
         @Override public Editor remove(String key) { return this; }
         @Override public Editor clear() { return this; }
         @Override public boolean commit() { return true; }
+        @Override public void apply() {}
     }
 
     public Editor edit() { return new Editor(this); }

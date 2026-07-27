@@ -11,10 +11,6 @@ public abstract class XCallback {
 
     public abstract void call(Param param);
 
-    public void call() {
-        call(new Param());
-    }
-
     public Class<?> getReferentClass() { return null; }
     public Object getReferent() { return null; }
     public boolean isUnhooked() { return false; }

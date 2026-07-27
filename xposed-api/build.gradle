@@ -1,20 +1,14 @@
 plugins {
-    id 'com.android.library'
+    id 'java-library'
 }
 
-android {
-    namespace 'de.robv.android.xposed.api'
-    compileSdk 34
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
 
-    sourceSets {
-        main {
-            manifest.srcFile 'src/main/AndroidManifest.xml'
-            java.srcDirs = ['../app/src/main/xposed']
-        }
-    }
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
-    }
+jar {
+    from sourceSets.main.output
 }

@@ -1,6 +1,5 @@
 package de.robv.android.xposed;
 
-import android.os.Bundle;
 import de.robv.android.xposed.callbacks.XCallback;
 
 public abstract class XC_MethodHook extends XCallback {
