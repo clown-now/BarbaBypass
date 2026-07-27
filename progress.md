@@ -31,3 +31,18 @@
 - `app/src/main/xposed/de/robv/android/xposed/XC_MethodHook.java`: removed an unused Android import.
 - `progress.md`: appended CI diagnosis, verification scope, and rollback details.
 - Rollback: run `git restore app/src/main/xposed/de/robv/android/xposed/XSharedPreferences.java app/src/main/xposed/de/robv/android/xposed/callbacks/XCallback.java app/src/main/xposed/de/robv/android/xposed/XC_MethodHook.java progress.md`; the remote rollback point is commit `7f101915b06d9204b7e3a6d9704e29210788798c`.
+## 2026-07-27 - Task: Add the Xposed module initialization entry
+
+### What was done
+- Added the standard Xposed initialization asset so LSPosed can discover `com.barbabypass.skip.MainHook` as the module entry point.
+- Synchronized the local `main` branch to remote `origin/main` at commit `a99b968` before preparing the patch.
+
+### Testing
+- Verified `app/src/main/assets/xposed_init` contains exactly one line: `com.barbabypass.skip.MainHook`, terminated by a newline.
+- Verified the remote URL no longer contains an embedded credential and fetched `origin/main` successfully.
+- `git diff --check` and APK rebuild remain pending; the earlier local Gradle attempt timed out without a trustworthy build result.
+
+### Notes
+- `app/src/main/assets/xposed_init`: added the Xposed module entry class registration.
+- `progress.md`: appended this task record and its verification limits.
+- Rollback: `git revert <new-commit>` after push, or before push remove `app/src/main/assets/xposed_init` and the appended progress entry; base rollback point is `a99b968`.
